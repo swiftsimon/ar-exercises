@@ -41,8 +41,6 @@ puts "Store count #{Store.count}"
 
 class Employee < ActiveRecord::Base
   belongs_to :store
-
-
 end
 
 

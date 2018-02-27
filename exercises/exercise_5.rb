@@ -13,4 +13,15 @@ puts "----------"
 # 2. On the next line, also output the average annual revenue for all stores.
 # 3. Output the number of stores that are generating $1M or more in annual sales. **Hint:** Chain together `where` and `size` (or `count`) Active Record methods.
 
-# # Your code goes here ...
+
+@sum_all = Store.sum("annual_revenue")
+puts "Total annual revenue is $#{@sum_all}"
+
+@average = @sum_all/Store.count
+puts "Average store revenue is $#{@average}"
+
+@number_1M = Store.where("annual_revenue >1000000").count
+puts "$1M and above store count #{@number_1M}"
+
+
+
